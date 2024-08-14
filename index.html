@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>EC-FIX</title>
     <link rel="stylesheet" href="styles.css">
 </head>
+
 <body>
     <header>
         <div class="logo">
@@ -13,7 +15,7 @@
         </div>
         <nav>
             <ul>
-                <li><a href="#" >SERVICIO</a></li>
+                <li><a href="#">SERVICIO</a></li>
                 <li><a href="#nosotros">NOSOTROS</a></li>
                 <li><a href="#" onclick="mostrarFormulario('contacto')">CONTACTO</a></li>
                 <li><a href="#" onclick="mostrarFormulario('iniciar-sesion')">INICIAR SESIÓN</a></li>
@@ -24,7 +26,10 @@
     <main>
         <section id="servicio">
             <div class="mapa">
-                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d53223.596913143876!2d-70.86533946251353!3d-33.51503883100833!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9662dd285b2c673f%3A0xfcd19ca5936c866d!2sMaip%C3%BA%2C%20Regi%C3%B3n%20Metropolitana!5e0!3m2!1ses!2scl!4v1723249800368!5m2!1ses!2scl" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d53223.596913143876!2d-70.86533946251353!3d-33.51503883100833!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9662dd285b2c673f%3A0xfcd19ca5936c866d!2sMaip%C3%BA%2C%20Regi%C3%B3n%20Metropolitana!5e0!3m2!1ses!2scl!4v1723249800368!5m2!1ses!2scl"
+                    width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
+                    referrerpolicy="no-referrer-when-downgrade"></iframe>
                 <button>Solicitar Servicio</button>
             </div>
             <div class="servicios">
@@ -46,10 +51,15 @@
             <h1>Nosotros</h1>
             <ul>
                 <li>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vero ipsam qui illum culpa ab ea sequi quas minima quibusdam suscipit. Cumque assumenda consectetur veniam neque voluptates ducimus porro. Inventore, similique!</p>
-                    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Facere aperiam et error eaque reiciendis eligendi eos libero iste molestias! Asperiores laudantium sapiente debitis distinctio quis sed ut delectus veritatis eos.</p>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vero ipsam qui illum culpa ab ea sequi
+                        quas minima quibusdam suscipit. Cumque assumenda consectetur veniam neque voluptates ducimus
+                        porro. Inventore, similique!</p>
+                    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Facere aperiam et error eaque
+                        reiciendis eligendi eos libero iste molestias! Asperiores laudantium sapiente debitis distinctio
+                        quis sed ut delectus veritatis eos.</p>
                 </li>
             </ul>
+            <img src="" alt="foto-mecanicos">
         </section>
 
         <!-- Formulario de Iniciar Sesión -->
@@ -62,8 +72,8 @@
                     <label for="contrasena">Contraseña</label>
                     <input type="password" id="contrasena" name="contrasena" required placeholder="*********">
                     <button type="submit">Ingresar</button> <br> <br>
-                    <a href="#" id="registro_link" >Crear Cuenta</a><br> <br>
-                    <a href="#" id="recuperar_password_link" >¿Olvidaste tu contraseña?</a>
+                    <a href="#" id="registro_link">Crear Cuenta</a><br> <br>
+                    <a href="#" id="recuperar_password_link">¿Olvidaste tu contraseña?</a>
                 </form>
                 <button class="close" onclick="cerrarFormulario()">X</button>
             </div>
@@ -82,21 +92,21 @@
                         <p>+569-1234 5678</p>
                     </ul> <br>
                     <label for="correo-contacto">Déjanos tu contacto aquí</label>
-                    <input type="email" id="correo-contacto" name="correo-contacto" required placeholder="ec-fix@gmail.com">
+                    <input type="email" id="correo-contacto" name="correo-contacto" required
+                        placeholder="ec-fix@gmail.com">
                     <label for="mensaje">Explícanos tu problema aquí</label>
-                    <textarea id="mensaje" name="mensaje" required ></textarea>
+                    <textarea id="mensaje" name="mensaje" required></textarea>
                     <button type="submit">Enviar</button>
                 </form>
                 <button class="close" onclick="cerrarFormulario()">X</button>
             </div>
         </div>
-
     </main>
-
     <footer>
         <p>Todos los derechos reservados ©</p>
     </footer>
 
     <script src="scripts.js"></script>
 </body>
+
 </html>
