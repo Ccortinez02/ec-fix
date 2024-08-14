@@ -148,6 +148,7 @@ footer p {
 }
 
 .popup {
+    position: relative; /* Asegúrate de que el contenedor sea relativo para que el botón de cerrar se posicione correctamente */
     background-color: #2c2c2c;
     padding: 20px;
     border-radius: 3px;
@@ -187,17 +188,20 @@ footer p {
 }
 
 .popup button.close {
-    background-color: #E74C3C;
-    position: absolute;
+    position: absolute; /* Posiciona el botón de cerrar de forma absoluta dentro del contenedor */
     top: 10px;
-    right: 10px;
+    right: 10px; /* Alinea a la derecha */
+    background-color: #E74C3C;
     padding: 5px 10px;
     font-size: 14px;
+    border: none;
+    color: white;
     cursor: pointer;
+    border-radius: 3px;
 }
 
-.popup button:hover {
-    background-color: #2980b9;
+.popup button.close:hover {
+    background-color: #C0392B;
 }
 
 #registro_link{
