@@ -8,3 +8,7 @@ function cerrarFormulario() {
         formulario.style.display = 'none';
     });
 }
+
+/// crear funcion de recuperar datos
+
+/// 
