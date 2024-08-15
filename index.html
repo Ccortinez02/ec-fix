@@ -57,7 +57,7 @@
                     <label for="contrasena">Contraseña</label>
                     <input type="password" id="contrasena" name="contrasena" required placeholder="*********">
                     <button type="submit">Ingresar</button> <br> <br>
-                    <a href="#" id="registro_link">Crear Cuenta</a><br> <br>
+                    <a href="#" id="registro_link" onclick="mostrarFormulario('crear-cuenta')">Crear Cuenta</a><br> <br>
                     <a href="#" id="recuperar_password_link">¿Olvidaste tu contraseña?</a>
                 </form>
             </div>
@@ -81,6 +81,21 @@
                     <label for="mensaje">Explícanos tu problema aquí</label>
                     <textarea id="mensaje" name="mensaje" required></textarea>
                     <button type="submit">Enviar</button>
+                </form>
+            </div>
+        </div>
+        <!-- Formulario de Crear Cuenta -->
+        <div id="crear-cuenta" class="overlay">
+            <div class="popup">
+                <button class="close" onclick="cerrarFormulario()">X</button>
+                <h2>Crear Cuenta</h2>
+                <form id="form-crear-cuenta">
+                    <label for="nuevo-correo">Correo</label>
+                    <input type="email" id="nuevo-correo" name="nuevo-correo" required placeholder="ec-fix@gmail.com">
+                    <label for="nueva-contrasena">Contraseña</label>
+                    <input type="password" id="nueva-contrasena" name="nueva-contrasena" required
+                        placeholder="*********">
+                    <button type="submit">Crear Cuenta</button>
                 </form>
             </div>
         </div>
