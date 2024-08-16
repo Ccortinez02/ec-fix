@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Panel de Administración</title>
+    <link rel="stylesheet" href="/styles_admin.css">
+</head>
+<body>
+    <nav>
+        <ul>
+            <li><a href="#" onclick="mostrarTabla('usuarios')">Usuarios</a></li>
+            <li><a href="#">Mecánicos</a></li>
+            <li><a href="#">Servicios</a></li>
+        </ul>
+    </nav>
+
+    <div id="tabla-usuarios" style="display: none;">
+        <table>
+            <thead>
+                <tr>
+                    <th>Correo</th>
+                    <th>Contraseña</th>
+                    <th>Fecha de Creación</th>
+                    <th>Rut</th>
+                </tr>
+            </thead>
+            <tbody id="cuerpo-tabla-usuarios">
+            </tbody>
+        </table>
+    </div>
+
+    <script src="/scripts.js"></script>
+</body>
+</html>
