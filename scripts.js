@@ -4,7 +4,7 @@ function mostrarFormulario(id) {
 
 function cerrarFormulario() {
     var formularios = document.querySelectorAll('.overlay');
-    formularios.forEach(function(formulario) {
+    formularios.forEach(function (formulario) {
         formulario.style.display = 'none';
     });
 }
@@ -16,13 +16,13 @@ function mostrarFormulario(id) {
 // Cerrar formulario
 function cerrarFormulario() {
     var formularios = document.querySelectorAll('.overlay');
-    formularios.forEach(function(formulario) {
+    formularios.forEach(function (formulario) {
         formulario.style.display = 'none';
     });
 }
 
 // Crear cuenta
-document.getElementById('form-crear-cuenta').addEventListener('submit', function(event) {
+document.getElementById('form-crear-cuenta').addEventListener('submit', function (event) {
     event.preventDefault();
 
     const correo = document.getElementById('nuevo-correo').value;
@@ -40,7 +40,7 @@ document.getElementById('form-crear-cuenta').addEventListener('submit', function
 });
 
 // Iniciar sesión
-document.querySelector('#iniciar-sesion form').addEventListener('submit', function(event) {
+document.querySelector('#iniciar-sesion form').addEventListener('submit', function (event) {
     event.preventDefault();
 
     const correo = document.getElementById('correo').value;
@@ -52,7 +52,7 @@ document.querySelector('#iniciar-sesion form').addEventListener('submit', functi
 
     if (usuarioExistente) {
         alert('Inicio de sesión exitoso');
-        window.location.href = '/pages/inicio_user.html'; // Redirigir al usuario
+        window.location.href = '/pages/inicio_user.html'; // Redirigir al usuario a la pagina principal
     } else if (!usuarioExistente) {
         alert('Usuario no registrado. Regístrese para acceder al sistema.');
     } else {
@@ -77,8 +77,8 @@ function toggleSidebar() {
 function cerrarSesion() {
     alert('Has cerrado sesión');
     localStorage.removeItem('usuarios');
-    window.location.href = '/index.html'; // Redirige a la página principal o de inicio
+    window.location.href = '/index.html'; // Redirige a la página principal sin iniciar sesion
 }
 
-// Mantén tus funciones existentes aquí...
+
 
