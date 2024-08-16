@@ -53,6 +53,8 @@ document.querySelector('#iniciar-sesion form').addEventListener('submit', functi
     if (usuarioExistente) {
         alert('Inicio de sesión exitoso');
         window.location.href = '/pages/inicio_user.html'; // Redirigir al usuario
+    } else if (!usuarioExistente) {
+        alert('Usuario no registrado. Regístrese para acceder al sistema.');
     } else {
         alert('Correo o contraseña incorrectos');
     }
