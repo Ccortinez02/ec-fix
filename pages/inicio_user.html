@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EC-FIX</title>
+    <link rel="stylesheet" href="/styles.css">
+    <script src="https://kit.fontawesome.com/192ba4ed31.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <h1>EC-FIX LOGO</h1> <!-- logo de ec-fix-->
+        </div>
+        <nav>
+            <ul>
+                <li><a href="#" id="btn-service">SERVICIO EXPRESS</a></li>
+                <li><a href="#" onclick="toggleSidebar()">MI PERFIL <i class="fa-solid fa-circle-user"></i></a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section id="servicio">
+            <div class="mapa">
+                <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d53223.596913143876!2d-70.86533946251353!3d-33.51503883100833!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9662dd285b2c673f%3A0xfcd19ca5936c866d!2sMaip%C3%BA%2C%20Regi%C3%B3n%20Metropolitana!5e0!3m2!1ses!2scl!4v1723249800368!5m2!1ses!2scl"
+                    width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
+                    referrerpolicy="no-referrer-when-downgrade"></iframe>
+                <button>Solicitar Servicio</button>
+                <section id="opciones_servicio"> <!-- agregar servicios especificos, servicios express-->
+                </section>
+            </div>
+            <div class="servicios">
+                <div class="servicio-item">
+                    <img src="/img/img_deteccion.png" alt="Mantenimiento">
+                    <button class="servicio-boton">Mantenimiento</button>
+                </div>
+                <div class="servicio-item">
+                    <img src="/img/img_mantenimiento.png" alt="Detección de Problemas">
+                    <button class="servicio-boton">Detección de Problemas</button>
+                </div>
+                <div class="servicio-item">
+                    <img src="/img/img_modificaciones.png" alt="Modificaciones">
+                    <button class="servicio-boton">Modificaciones</button>
+                </div>
+            </div>
+        </section>
+        <section id="nosotros"> <!-- crear seccion de nosotros-->
+        </section>
+        <!-- Formulario de Iniciar Sesión -->
+        <div id="iniciar-sesion" class="overlay">
+            <div class="popup">
+                <button class="close" onclick="cerrarFormulario()">X</button>
+                <h2>Iniciar Sesión</h2>
+                <form>
+                    <label for="correo">Correo</label>
+                    <input type="email" id="correo" name="correo" required placeholder="ec-fix@gmail.com">
+                    <label for="contrasena">Contraseña</label>
+                    <input type="password" id="contrasena" name="contrasena" required placeholder="*********">
+                    <button type="submit">Ingresar</button> <br> <br>
+                    <a href="#" id="registro_link" onclick="mostrarFormulario('crear-cuenta')">Crear Cuenta</a><br> <br>
+                    <a href="#" id="recuperar_password_link">¿Olvidaste tu contraseña?</a>
+                </form>
+            </div>
+        </div>
+        <!-- Formulario de Contacto -->
+        <div id="contacto" class="overlay">
+            <div class="popup">
+                <button class="close" onclick="cerrarFormulario()">X</button>
+                <h2>Contáctanos</h2>
+                <form>
+                    <p>Nuestro correo de ayuda es: <strong>ec-fix@ayuda.cl</strong></p>
+                    <p>Llámanos a estos números:</p>
+                    <ul>
+                        <p>+569-1234 5678</p>
+                        <p>+569-1234 5678</p>
+                        <p>+569-1234 5678</p>
+                    </ul> <br>
+                    <label for="correo-contacto">Déjanos tu contacto aquí</label>
+                    <input type="email" id="correo-contacto" name="correo-contacto" required
+                        placeholder="ec-fix@gmail.com">
+                    <label for="mensaje">Explícanos tu problema aquí</label>
+                    <textarea id="mensaje" name="mensaje" required></textarea>
+                    <button type="submit">Enviar</button>
+                </form>
+            </div>
+        </div>
+        <!-- Formulario de Crear Cuenta -->
+        <div id="crear-cuenta" class="overlay">
+            <div class="popup">
+                <button class="close" onclick="cerrarFormulario()">X</button>
+                <h2>Crear Cuenta</h2>
+                <form id="form-crear-cuenta">
+                    <label for="nuevo-correo">Correo</label>
+                    <input type="email" id="nuevo-correo" name="nuevo-correo" required placeholder="ec-fix@gmail.com">
+                    <label for="nueva-contrasena">Contraseña</label>
+                    <input type="password" id="nueva-contrasena" name="nueva-contrasena" required
+                        placeholder="*********">
+                    <button type="submit">Crear Cuenta</button>
+                </form>
+            </div>
+        </div>
+    </main>
+    <footer> <!-- agregar redes, y menu de contacto, etc...-->
+        <p>Todos los derechos reservados ©</p>
+    </footer>
+    <!-- Sidebar -->
+    <div id="sidebar" class="sidebar">
+        <a href="#" class="closebtn" onclick="toggleSidebar()">&times;</a>
+        <a href="#" onclick="cerrarSesion()">Cerrar Sesión</a>
+        <a href="#" onclick="mostrarFormulario('contacto')">Ayuda</a>
+        <a href="#" onclick="mostrarFormulario('servicio')">Solicitar Servicio</a>
+        <div class="sidebar-footer">
+            <a href="#" onclick="mostrarFormulario('terminos-condiciones')">Términos y Condiciones</a>
+        </div>
+    </div>
+    <script src="/scripts.js"></script>
+</body>
+
+</html>

@@ -52,8 +52,31 @@ document.querySelector('#iniciar-sesion form').addEventListener('submit', functi
 
     if (usuarioExistente) {
         alert('Inicio de sesión exitoso');
-        // Aquí puedes redirigir al usuario a la página principal o dashboard
+        window.location.href = '/pages/inicio_user.html'; // Redirigir al usuario
     } else {
         alert('Correo o contraseña incorrectos');
     }
 });
+
+// Función para mostrar y ocultar el sidebar
+function toggleSidebar() {
+    var sidebar = document.getElementById('sidebar');
+    var body = document.body;
+    if (sidebar.style.width === '250px') {
+        sidebar.style.width = '0';
+        body.classList.remove('active-sidebar');
+    } else {
+        sidebar.style.width = '250px';
+        body.classList.add('active-sidebar');
+    }
+}
+
+// Cerrar sesión
+function cerrarSesion() {
+    alert('Has cerrado sesión');
+    localStorage.removeItem('usuarios');
+    window.location.href = '/index.html'; // Redirige a la página principal o de inicio
+}
+
+// Mantén tus funciones existentes aquí...
+
