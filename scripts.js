@@ -1,3 +1,15 @@
+// Lista de usuarios predefinidos, incluyendo al administrador
+const usuariosPredefinidos = [
+    { correo: 'usuario1@ejemplo.com', contrasena: 'password1' },
+    { correo: 'usuario2@ejemplo.com', contrasena: 'password2' },
+    // ... otros usuarios
+    { correo: 'admin@gmail.com', contrasena: 'ADMIN' },
+];
+
+const mecanicosPredefinidos = [
+    { correo: 'mecanicojuan@gmail.com', contrasena: '123456'}
+]
+
 function mostrarFormulario(id) {
     document.getElementById(id).style.display = 'flex';
 }
@@ -28,9 +40,11 @@ document.getElementById('form-crear-cuenta').addEventListener('submit', function
     const correo = document.getElementById('nuevo-correo').value;
     const contrasena = document.getElementById('nueva-contrasena').value;
 
+    
+
     // Guardar en localStorage
     let usuarios = JSON.parse(localStorage.getItem('usuarios')) || [];
-    const nuevoUsuario = { correo: correo, contrasena: contrasena };
+    usuarios = usuarios.concat(usuariosPredefinidos);
 
     usuarios.push(nuevoUsuario);
     localStorage.setItem('usuarios', JSON.stringify(usuarios));
@@ -117,4 +131,12 @@ function mostrarTabla(tabla) {
         // Aquí puedes agregar lógica para mostrar las otras tablas (mecánicos, servicios)
     }
 }
+
+mapboxgl.accessToken = 'pk.eyJ1IjoiY29ydGluZXowMiIsImEiOiJjbHp4Z2o0NHgwYjIzMmlxNzZybm9pdXlzIn0.9zIWFtSdssaHrZqgki9c1w';
+const map = new mapboxgl.Map({
+    container: 'map',
+    style: 'mapbox://styles/mapbox/streets-v11',
+    center: [-70.6693, -33.4489], // Coordenadas de Santiago
+    zoom: 12
+});
 

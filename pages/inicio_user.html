@@ -6,6 +6,8 @@
     <title>EC-FIX</title>
     <link rel="stylesheet" href="/styles.css">
     <script src="https://kit.fontawesome.com/192ba4ed31.js" crossorigin="anonymous"></script>
+    <link href='https://api.mapbox.com/mapbox-gl-js/v2.13.0/mapbox-gl.css' rel='stylesheet'/>
+    <script src='https://api.mapbox.com/mapbox-gl-js/v2.13.0/mapbox-gl.js'></script>
 </head>
 <body>
     <header>
@@ -21,11 +23,7 @@
     </header>
     <main>
         <section id="servicio">
-            <div class="mapa">
-                <iframe
-                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d53223.596913143876!2d-70.86533946251353!3d-33.51503883100833!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9662dd285b2c673f%3A0xfcd19ca5936c866d!2sMaip%C3%BA%2C%20Regi%C3%B3n%20Metropolitana!5e0!3m2!1ses!2scl!4v1723249800368!5m2!1ses!2scl"
-                    width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
-                    referrerpolicy="no-referrer-when-downgrade"></iframe>
+            <div class="mapa" id="map">
                 <button>Solicitar Servicio</button>
                 <section id="opciones_servicio"> <!-- agregar servicios especificos, servicios express-->
                 </section>
