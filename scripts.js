@@ -50,15 +50,38 @@ function initAutocomplete() {
     });
 }
 
-// Crear cuenta
+// Función para convertir una dirección en coordenadas usando Mapbox Geocoding API
+function geocodeAddress(direccion, callback) {
+    const apiKey = 'pk.eyJ1IjoiY29ydGluZXowMiIsImEiOiJjbHp4Z2o0NHgwYjIzMmlxNzZybm9pdXlzIn0.9zIWFtSdssaHrZqgki9c1w'; // Reemplaza con tu clave de API
+    const url = `https://api.mapbox.com/geocoding/v5/mapbox.places/${encodeURIComponent(direccion)}.json?access_token=${apiKey}`;
+
+    fetch(url)
+        .then(response => response.json())
+        .then(data => {
+            if (data.features.length > 0) {
+                const location = data.features[0].geometry.coordinates;
+                callback(location[0], location[1]);
+            } else {
+                alert('No se encontró la dirección.');
+            }
+        })
+        .catch(error => {
+            console.error('Error al geocodificar la dirección:', error);
+            alert('Error al geocodificar la dirección.');
+        });
+}
+
+// Ejemplo de uso en el formulario de registro
 document.getElementById('form-crear-cuenta').addEventListener('submit', function (event) {
     event.preventDefault();
 
     const correo = document.getElementById('nuevo-correo').value;
     const contrasena = document.getElementById('nueva-contrasena').value;
+    const esMecanico = document.getElementById('es-mecanico').checked;
+    const direccionMecanico = esMecanico ? document.getElementById('direccion-mecanico').value : '';
 
     // Crear objeto del nuevo usuario
-    const nuevoUsuario = { correo, contrasena };
+    const nuevoUsuario = { correo, contrasena, esMecanico, direccionMecanico };
 
     // Obtener usuarios existentes
     let usuarios = JSON.parse(localStorage.getItem('usuarios')) || [];
@@ -74,9 +97,18 @@ document.getElementById('form-crear-cuenta').addEventListener('submit', function
     usuarios.push(nuevoUsuario);
     localStorage.setItem('usuarios', JSON.stringify(usuarios));
 
+    // Si es mecánico, agregar marcador al mapa
+    if (esMecanico && direccionMecanico) {
+        geocodeAddress(direccionMecanico, (lng, lat) => {
+            agregarMarcador(lng, lat); // Función para agregar el marcador al mapa
+        });
+    }
+
     alert('Cuenta creada exitosamente');
     cerrarFormulario();
 });
+
+
 
 // Inicializar el autocompletado cuando la página cargue
 window.onload = function() {
@@ -137,3 +169,9 @@ const map = new mapboxgl.Map({
 var input = document.getElementById('direccion-mecanico');
 var autocomplete = new google.maps.places.Autocomplete(input, { types: ['geocode'] });
 
+// Función para agregar un marcador al mapa
+function agregarMarcador(longitud, latitud) {
+    new mapboxgl.Marker()
+        .setLngLat([longitud, latitud])
+        .addTo(map);
+}
