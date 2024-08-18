@@ -1,14 +1,4 @@
-// Lista de usuarios predefinidos, incluyendo al administrador
-const usuariosPredefinidos = [
-    { correo: 'usuario1@ejemplo.com', contrasena: 'password1' },
-    { correo: 'usuario2@ejemplo.com', contrasena: 'password2' },
-    // ... otros usuarios
-    { correo: 'admin@gmail.com', contrasena: 'ADMIN' },
-];
 
-const mecanicosPredefinidos = [
-    { correo: 'mecanicojuan@gmail.com', contrasena: '123456' }
-]
 
 function mostrarFormulario(id) {
     document.getElementById(id).style.display = 'flex';
@@ -30,6 +20,33 @@ function cerrarFormulario() {
     var formularios = document.querySelectorAll('.overlay');
     formularios.forEach(function (formulario) {
         formulario.style.display = 'none';
+    });
+}
+
+// Mostrar campos adicionales si se selecciona el checkbox "Crear cuenta como mecánico"
+document.getElementById('es-mecanico').addEventListener('change', function () {
+    const datosMecanico = document.getElementById('datos-mecanico');
+    if (this.checked) {
+        datosMecanico.style.display = 'block';
+    } else {
+        datosMecanico.style.display = 'none';
+    }
+});
+
+// Autocompletado de direcciones usando Google Places API
+function initAutocomplete() {
+    const input = document.getElementById('direccion-mecanico');
+    const autocomplete = new google.maps.places.Autocomplete(input, {
+        types: ['geocode'] // Puedes ajustar el tipo de resultados que deseas
+    });
+
+    autocomplete.addListener('place_changed', function () {
+        const place = autocomplete.getPlace();
+        if (!place.geometry) {
+            return; // Si no se encontró la dirección, no hacer nada
+        }
+        // Puedes almacenar la dirección completa u otras partes de la dirección si es necesario
+        console.log("Dirección seleccionada: ", place.formatted_address);
     });
 }
 
@@ -61,6 +78,11 @@ document.getElementById('form-crear-cuenta').addEventListener('submit', function
     cerrarFormulario();
 });
 
+// Inicializar el autocompletado cuando la página cargue
+window.onload = function() {
+    initAutocomplete();
+};
+
 // Iniciar sesión
 document.querySelector('#iniciar-sesion form').addEventListener('submit', function (event) {
     event.preventDefault();
@@ -83,6 +105,13 @@ document.querySelector('#iniciar-sesion form').addEventListener('submit', functi
     }
 });
 
+// Cerrar sesión
+function cerrarSesion() {
+    alert('Has cerrado sesión');
+    localStorage.removeItem('usuarios');
+    window.location.href = '/index.html'; // Redirige a la página principal sin iniciar sesion
+}
+
 // Función para mostrar y ocultar el sidebar
 function toggleSidebar() {
     var sidebar = document.getElementById('sidebar');
@@ -96,50 +125,6 @@ function toggleSidebar() {
     }
 }
 
-// Cerrar sesión
-function cerrarSesion() {
-    alert('Has cerrado sesión');
-    localStorage.removeItem('usuarios');
-    window.location.href = '/index.html'; // Redirige a la página principal sin iniciar sesion
-}
-
-// ... (tu código existente)
-
-// Mostrar tabla de usuarios
-function mostrarTabla(tabla) {
-    const tablaUsuarios = document.getElementById('tabla-usuarios');
-    const cuerpoTabla = document.getElementById('cuerpo-tabla-usuarios');
-
-    if (tabla === 'usuarios') {
-        tablaUsuarios.style.display = 'block';
-
-        const usuarios = JSON.parse(localStorage.getItem('usuarios')) || [];
-        cuerpoTabla.innerHTML = '';
-
-        usuarios.forEach(usuario => {
-            const fila = document.createElement('tr');
-            const celdaCorreo = document.createElement('td');
-            const celdaContrasena = document.createElement('td');
-            const celdaFechaCreacion = document.createElement('td');
-            const celdaRut = document.createElement('td');
-
-            celdaCorreo.textContent = usuario.correo;
-            celdaContrasena.textContent = usuario.contrasena;
-            // Aquí puedes agregar lógica para obtener la fecha de creación y el RUT
-            celdaFechaCreacion.textContent = '2023-11-24'; // Ejemplo
-            celdaRut.textContent = '12345678-9'; // Ejemplo
-
-            fila.appendChild(celdaCorreo);
-            fila.appendChild(celdaContrasena);
-            fila.appendChild(celdaFechaCreacion);
-            fila.appendChild(celdaRut);
-            cuerpoTabla.appendChild(fila);
-        });
-    } else {
-        // Aquí puedes agregar lógica para mostrar las otras tablas (mecánicos, servicios)
-    }
-}
-
 mapboxgl.accessToken = 'pk.eyJ1IjoiY29ydGluZXowMiIsImEiOiJjbHp4Z2o0NHgwYjIzMmlxNzZybm9pdXlzIn0.9zIWFtSdssaHrZqgki9c1w';
 const map = new mapboxgl.Map({
     container: 'map',
@@ -147,4 +132,8 @@ const map = new mapboxgl.Map({
     center: [-70.6693, -33.4489], // Coordenadas de Santiago
     zoom: 12
 });
+
+// Autocompletado de la dirección usando la API de Google Places
+var input = document.getElementById('direccion-mecanico');
+var autocomplete = new google.maps.places.Autocomplete(input, { types: ['geocode'] });
 

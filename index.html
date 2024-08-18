@@ -1,13 +1,15 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>EC-FIX</title>
-    <link rel="stylesheet" href="/styles.css">
-    <link href='https://api.mapbox.com/mapbox-gl-js/v2.13.0/mapbox-gl.css' rel='stylesheet'/>
+    <link rel="stylesheet" href="styles.css">
+    <link href='https://api.mapbox.com/mapbox-gl-js/v2.13.0/mapbox-gl.css' rel='stylesheet' />
     <script src='https://api.mapbox.com/mapbox-gl-js/v2.13.0/mapbox-gl.js'></script>
 </head>
+
 <body>
     <header>
         <div class="logo">
@@ -22,7 +24,8 @@
     </header>
     <main>
         <section id="servicio">
-            <div class="mapa" id="map" heigth="450">
+            <div class="mapa" id="map" height="450">
+                <button>Solicitar Servicio</button>
                 <section id="opciones_servicio"> <!-- agregar servicios especificos, servicios express-->
                 </section>
             </div>
@@ -54,7 +57,8 @@
                     <label for="contrasena">Contraseña</label>
                     <input type="password" id="contrasena" name="contrasena" required placeholder="*********">
                     <button type="submit">Ingresar</button> <br> <br>
-                    <a href="#" id="registro_link" onclick="mostrarFormulario('crear-cuenta')">Crear Cuenta</a><br> <br>
+                    <a href="#" onclick="mostrarFormulario('crear-cuenta')" id="registro_link">Crear Cuenta</a><br>
+                    <br>
                     <a href="#" id="recuperar_password_link">¿Olvidaste tu contraseña?</a>
                 </form>
             </div>
@@ -82,25 +86,39 @@
             </div>
         </div>
         <!-- Formulario de Crear Cuenta -->
-        <div id="crear-cuenta" class="overlay">
-            <div class="popup">
-                <button class="close" onclick="cerrarFormulario()">X</button>
-                <h2>Crear Cuenta</h2>
-                <form id="form-crear-cuenta">
-                    <label for="nuevo-correo">Correo</label>
-                    <input type="email" id="nuevo-correo" name="nuevo-correo" required placeholder="ec-fix@gmail.com">
-                    <label for="nueva-contrasena">Contraseña</label>
-                    <input type="password" id="nueva-contrasena" name="nueva-contrasena" required
-                        placeholder="*********">
-                    <button type="submit">Crear Cuenta</button>
-                </form>
+<div id="crear-cuenta" class="overlay">
+    <div class="popup">
+        <button class="close" onclick="cerrarFormulario()">X</button>
+        <h2>Crear Cuenta</h2>
+        <form id="form-crear-cuenta">
+            <label for="nuevo-correo">Correo</label>
+            <input type="email" id="nuevo-correo" name="nuevo-correo" required placeholder="ec-fix@gmail.com">
+            <label for="nueva-contrasena">Contraseña</label>
+            <input type="password" id="nueva-contrasena" name="nueva-contrasena" required placeholder="*********">
+            
+            <!-- Checkbox para crear cuenta como mecánico -->
+            <label>
+                Mecanico
+                <input type="checkbox" id="es-mecanico" name="es-mecanico">
+            </label>
+            
+            <div id="datos-mecanico" style="display:none;">
+                <label for="direccion-mecanico">Dirección</label>
+                <input type="text" id="direccion-mecanico" name="direccion-mecanico" placeholder="Ej: Calle Principal 123">
+                <ul id="direccion-sugerencias"></ul>
             </div>
-        </div>
+            
+            <button type="submit">Crear Cuenta</button>
+        </form>
+    </div>
+</div>
+
     </main>
     <footer> <!-- agregar redes, y menu de contacto, etc...-->
         <p>Todos los derechos reservados ©</p>
     </footer>
     <script src="/scripts.js"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCqfRQoRC7pl3sAo4mJNn9Crqz1ft65D4A&libraries=places"></script>
 </body>
 
 </html>
