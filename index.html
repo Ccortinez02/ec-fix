@@ -97,17 +97,15 @@
             <input type="password" id="nueva-contrasena" name="nueva-contrasena" required placeholder="*********">
             
             <!-- Checkbox para crear cuenta como mecánico -->
-            <label>
-                Mecanico
-                <input type="checkbox" id="es-mecanico" name="es-mecanico">
-            </label>
+            <p> Mecanico <input type="checkbox" id="es-mecanico" name="es-mecanico"></p>
             
             <div id="datos-mecanico" style="display:none;">
                 <label for="direccion-mecanico">Dirección</label>
                 <input type="text" id="direccion-mecanico" name="direccion-mecanico" placeholder="Ej: Calle Principal 123">
                 <ul id="direccion-sugerencias"></ul>
+                <label for="especialidad-mecanico">Especialidad</label>
+                <input type="text" id="especialidad-mecanico" name="especialidad-mecanico" placeholder="Mantencion">
             </div>
-            
             <button type="submit">Crear Cuenta</button>
         </form>
     </div>

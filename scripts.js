@@ -1,15 +1,3 @@
-
-
-function mostrarFormulario(id) {
-    document.getElementById(id).style.display = 'flex';
-}
-
-function cerrarFormulario() {
-    var formularios = document.querySelectorAll('.overlay');
-    formularios.forEach(function (formulario) {
-        formulario.style.display = 'none';
-    });
-}
 // Mostrar formulario
 function mostrarFormulario(id) {
     document.getElementById(id).style.display = 'flex';
@@ -79,9 +67,10 @@ document.getElementById('form-crear-cuenta').addEventListener('submit', function
     const contrasena = document.getElementById('nueva-contrasena').value;
     const esMecanico = document.getElementById('es-mecanico').checked;
     const direccionMecanico = esMecanico ? document.getElementById('direccion-mecanico').value : '';
+    const especialidadMecanico = esMecanico ? document.getElementById('especialidad-mecanico').value :'';
 
     // Crear objeto del nuevo usuario
-    const nuevoUsuario = { correo, contrasena, esMecanico, direccionMecanico };
+    const nuevoUsuario = { correo, contrasena, esMecanico, direccionMecanico, especialidadMecanico };
 
     // Obtener usuarios existentes
     let usuarios = JSON.parse(localStorage.getItem('usuarios')) || [];

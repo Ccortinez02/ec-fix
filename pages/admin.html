@@ -8,7 +8,7 @@
     <nav>
         <ul>
             <li><a href="#" onclick="mostrarTabla('usuarios')">Usuarios</a></li>
-            <li><a href="#">Mecánicos</a></li>
+            <li><a href="#" onclick="mostrarTabla('mecanicos')">Mecánicos</a></li>
             <li><a href="#">Servicios</a></li>
         </ul>
     </nav>
@@ -24,6 +24,21 @@
                 </tr>
             </thead>
             <tbody id="cuerpo-tabla-usuarios">
+            </tbody>
+        </table>
+    </div>
+
+    <div id="tabla-mecanicos" style="display: none;">
+        <table>
+            <thead>
+                <tr>
+                    <th>Correo</th>
+                    <th>Contraseña</th>
+                    <th>Dirección</th>
+                    <th>Especialidad</th>
+                </tr>
+            </thead>
+            <tbody id="cuerpo-tabla-mecanicos">
             </tbody>
         </table>
     </div>
