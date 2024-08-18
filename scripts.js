@@ -7,7 +7,7 @@ const usuariosPredefinidos = [
 ];
 
 const mecanicosPredefinidos = [
-    { correo: 'mecanicojuan@gmail.com', contrasena: '123456'}
+    { correo: 'mecanicojuan@gmail.com', contrasena: '123456' }
 ]
 
 function mostrarFormulario(id) {
@@ -40,12 +40,20 @@ document.getElementById('form-crear-cuenta').addEventListener('submit', function
     const correo = document.getElementById('nuevo-correo').value;
     const contrasena = document.getElementById('nueva-contrasena').value;
 
-    
+    // Crear objeto del nuevo usuario
+    const nuevoUsuario = { correo, contrasena };
 
-    // Guardar en localStorage
+    // Obtener usuarios existentes
     let usuarios = JSON.parse(localStorage.getItem('usuarios')) || [];
-    usuarios = usuarios.concat(usuariosPredefinidos);
 
+    // Verificar si el correo ya existe
+    const usuarioExistente = usuarios.find(usuario => usuario.correo === correo);
+    if (usuarioExistente) {
+        alert('El correo electrónico ya está registrado');
+        return;
+    }
+
+    // Agregar el nuevo usuario
     usuarios.push(nuevoUsuario);
     localStorage.setItem('usuarios', JSON.stringify(usuarios));
 
