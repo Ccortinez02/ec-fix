@@ -33,7 +33,6 @@ function initAutocomplete() {
         if (!place.geometry) {
             return; // Si no se encontró la dirección, no hacer nada
         }
-        // Puedes almacenar la dirección completa u otras partes de la dirección si es necesario
         console.log("Dirección seleccionada: ", place.formatted_address);
     });
 }
@@ -46,20 +45,17 @@ function geocodeAddress(direccion, callback) {
     fetch(url)
         .then(response => response.json())
         .then(data => {
-            if (data.features.length > 0) {
+            if (data.features && data.features.length > 0) {
                 const location = data.features[0].geometry.coordinates;
                 callback(location[0], location[1]);
             } else {
                 alert('No se encontró la dirección.');
             }
         })
-        .catch(error => {
-            console.error('Error al geocodificar la dirección:', error);
-            alert('Error al geocodificar la dirección.');
-        });
 }
 
-// Ejemplo de uso en el formulario de registro
+
+// Creación de cuentas
 document.getElementById('form-crear-cuenta').addEventListener('submit', function (event) {
     event.preventDefault();
 
@@ -67,41 +63,62 @@ document.getElementById('form-crear-cuenta').addEventListener('submit', function
     const contrasena = document.getElementById('nueva-contrasena').value;
     const esMecanico = document.getElementById('es-mecanico').checked;
     const direccionMecanico = esMecanico ? document.getElementById('direccion-mecanico').value : '';
-    const especialidadMecanico = esMecanico ? document.getElementById('especialidad-mecanico').value :'';
+    const especialidadMecanico = esMecanico ? document.getElementById('especialidad-mecanico').value : '';
 
-    // Crear objeto del nuevo usuario
     const nuevoUsuario = { correo, contrasena, esMecanico, direccionMecanico, especialidadMecanico };
 
-    // Obtener usuarios existentes
     let usuarios = JSON.parse(localStorage.getItem('usuarios')) || [];
 
-    // Verificar si el correo ya existe
     const usuarioExistente = usuarios.find(usuario => usuario.correo === correo);
     if (usuarioExistente) {
         alert('El correo electrónico ya está registrado');
         return;
     }
 
-    // Agregar el nuevo usuario
-    usuarios.push(nuevoUsuario);
-    localStorage.setItem('usuarios', JSON.stringify(usuarios));
-
-    // Si es mecánico, agregar marcador al mapa
     if (esMecanico && direccionMecanico) {
         geocodeAddress(direccionMecanico, (lng, lat) => {
-            agregarMarcador(lng, lat); // Función para agregar el marcador al mapa
+            nuevoUsuario.coordenadas = { lng, lat };  // Guardar coordenadas en el objeto de usuario
+            usuarios.push(nuevoUsuario);
+            localStorage.setItem('usuarios', JSON.stringify(usuarios));
+            agregarMarcador(lng, lat);
         });
+    } else {
+        usuarios.push(nuevoUsuario);
+        localStorage.setItem('usuarios', JSON.stringify(usuarios));
     }
 
     alert('Cuenta creada exitosamente');
     cerrarFormulario();
 });
 
-
-
-// Inicializar el autocompletado cuando la página cargue
-window.onload = function() {
+// Inicializar el mapa y autocompletado cuando la página cargue
+window.onload = function () {
+    // Inicializar autocompletado de direcciones
     initAutocomplete();
+
+    // Configuración del mapa con Mapbox
+    mapboxgl.accessToken = 'pk.eyJ1IjoiY29ydGluZXowMiIsImEiOiJjbHp4Z2o0NHgwYjIzMmlxNzZybm9pdXlzIn0.9zIWFtSdssaHrZqgki9c1w';
+    const map = new mapboxgl.Map({
+        container: 'map',
+        style: 'mapbox://styles/mapbox/streets-v11',
+        center: [-70.6693, -33.4489], // Coordenadas de Santiago
+        zoom: 12
+    });
+
+    // Cargar todos los mecánicos y mostrar sus marcadores en el mapa
+    const usuarios = JSON.parse(localStorage.getItem('usuarios')) || [];
+    usuarios.forEach(usuario => {
+        if (usuario.esMecanico && usuario.coordenadas) {
+            agregarMarcador(usuario.coordenadas.lng, usuario.coordenadas.lat);
+        }
+    });
+
+    // Función para agregar un marcador al mapa
+    function agregarMarcador(longitud, latitud) {
+        new mapboxgl.Marker()
+            .setLngLat([longitud, latitud])
+            .addTo(map);
+    }
 };
 
 // Iniciar sesión
@@ -146,21 +163,3 @@ function toggleSidebar() {
     }
 }
 
-mapboxgl.accessToken = 'pk.eyJ1IjoiY29ydGluZXowMiIsImEiOiJjbHp4Z2o0NHgwYjIzMmlxNzZybm9pdXlzIn0.9zIWFtSdssaHrZqgki9c1w';
-const map = new mapboxgl.Map({
-    container: 'map',
-    style: 'mapbox://styles/mapbox/streets-v11',
-    center: [-70.6693, -33.4489], // Coordenadas de Santiago
-    zoom: 12
-});
-
-// Autocompletado de la dirección usando la API de Google Places
-var input = document.getElementById('direccion-mecanico');
-var autocomplete = new google.maps.places.Autocomplete(input, { types: ['geocode'] });
-
-// Función para agregar un marcador al mapa
-function agregarMarcador(longitud, latitud) {
-    new mapboxgl.Marker()
-        .setLngLat([longitud, latitud])
-        .addTo(map);
-}
