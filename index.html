@@ -17,7 +17,13 @@
         </div>
         <nav>
             <ul>
-                <li><a href="#" id="btn-service">SERVICIO EXPRESS</a></li>
+                <!-- Botón de Servicio Express con lista desplegable -->
+                <li>
+                    <a href="#" id="btn-service">SERVICIO EXPRESS</a>
+                    <div id="dropdown-lista-mecanicos" class="dropdown-content">
+                        <ul id="mecanicos"></ul>
+                    </div>
+                </li>
                 <li><a href="#" onclick="mostrarFormulario('iniciar-sesion')">INICIAR SESIÓN</a></li>
             </ul>
         </nav>
@@ -46,6 +52,7 @@
         </section>
         <section id="nosotros"> <!-- crear seccion de nosotros-->
         </section>
+
         <!-- Formulario de Iniciar Sesión -->
         <div id="iniciar-sesion" class="overlay">
             <div class="popup">
