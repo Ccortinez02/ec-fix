@@ -208,7 +208,7 @@ document.addEventListener("DOMContentLoaded", function () {
         } else {
             mecanicos.forEach(mecanico => {
                 const li = document.createElement("li");
-                li.textContent = `${mecanico.correo} - ${mecanico.especialidadMecanico}`;
+                li.textContent = `${mecanico.nombre} - ${mecanico.direccionMecanico} - ${mecanico.especialidadMecanico}`;
                 mecanicosUl.appendChild(li);
             });
         }

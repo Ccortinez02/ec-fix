@@ -300,6 +300,7 @@ body.active-sidebar {
     margin: 0;
     display: flex;
     flex-direction: column;
+    margin-left: -18px;
 }
 
 #dropdown-lista-mecanicos ul li {
