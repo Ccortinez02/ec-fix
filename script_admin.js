@@ -17,12 +17,16 @@ function mostrarTabla(tabla) {
                 const fila = document.createElement('tr');
 
                 const celdaCorreo = document.createElement('td');
+                const celdaNombreUsuario = document.createElement('td');
+                const celdaNombre = document.createElement('td');
                 const celdaContrasena = document.createElement('td');
                 const celdaFechaCreacion = document.createElement('td');
                 const celdaRut = document.createElement('td');
                 const celdaAcciones = document.createElement('td');
 
                 celdaCorreo.textContent = usuario.correo;
+                celdaNombreUsuario.textContent = usuario.nombreUsuario || 'N/A'; // Agregado nombre de usuario
+                celdaNombre.textContent = usuario.nombre || 'N/A'; // Agregado nombre
                 celdaContrasena.textContent = usuario.contrasena;
                 celdaFechaCreacion.textContent = usuario.fechaCreacion || '2023-11-24'; // Ejemplo
                 celdaRut.textContent = usuario.rut || '12345678-9'; // Ejemplo
@@ -41,6 +45,8 @@ function mostrarTabla(tabla) {
                 celdaAcciones.appendChild(btnEliminar);
 
                 fila.appendChild(celdaCorreo);
+                fila.appendChild(celdaNombreUsuario); // Agregar la celda de nombre de usuario
+                fila.appendChild(celdaNombre); // Agregar la celda de nombre
                 fila.appendChild(celdaContrasena);
                 fila.appendChild(celdaFechaCreacion);
                 fila.appendChild(celdaRut);
@@ -61,15 +67,21 @@ function mostrarTabla(tabla) {
                 const fila = document.createElement('tr');
 
                 const celdaCorreo = document.createElement('td');
+                const celdaNombreUsuario = document.createElement('td');
+                const celdaNombre = document.createElement('td');
                 const celdaContrasena = document.createElement('td');
                 const celdaDireccion = document.createElement('td');
                 const celdaEspecialidad = document.createElement('td');
+                const celdaRut = document.createElement('td');
                 const celdaAcciones = document.createElement('td');
 
                 celdaCorreo.textContent = usuario.correo;
+                celdaNombreUsuario.textContent = usuario.nombreUsuario || 'N/A'; // Agregado nombre de usuario
+                celdaNombre.textContent = usuario.nombre || 'N/A'; // Agregado nombre
                 celdaContrasena.textContent = usuario.contrasena;
                 celdaDireccion.textContent = usuario.direccionMecanico;
                 celdaEspecialidad.textContent = usuario.especialidadMecanico;
+                celdaRut.textContent = usuario.rut || '12345678-9'; // Ejemplo
 
                 // Botón para editar
                 const btnEditar = document.createElement('button');
@@ -85,9 +97,12 @@ function mostrarTabla(tabla) {
                 celdaAcciones.appendChild(btnEliminar);
 
                 fila.appendChild(celdaCorreo);
+                fila.appendChild(celdaNombreUsuario); // Agregar la celda de nombre de usuario
+                fila.appendChild(celdaNombre); // Agregar la celda de nombre
                 fila.appendChild(celdaContrasena);
                 fila.appendChild(celdaDireccion);
                 fila.appendChild(celdaEspecialidad);
+                fila.appendChild(celdaRut); // Agregar la celda de RUT
                 fila.appendChild(celdaAcciones);
 
                 cuerpoTablaMecanicos.appendChild(fila);
@@ -95,6 +110,7 @@ function mostrarTabla(tabla) {
         });
     }
 }
+
 
 // Función para eliminar un usuario o mecánico
 function eliminarUsuario(index) {
