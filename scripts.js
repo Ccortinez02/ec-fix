@@ -59,12 +59,32 @@ document.getElementById('form-crear-cuenta').addEventListener('submit', function
     event.preventDefault();
 
     const correo = document.getElementById('nuevo-correo').value;
+    const nombreUsuario = document.getElementById('nuevo-nombre-usuario').value;
+    const nombre = document.getElementById('nuevo-nombre').value;  // Nuevo campo de nombre
+    const rut = document.getElementById('nuevo-rut').value;  // Nuevo campo de RUT
     const contrasena = document.getElementById('nueva-contrasena').value;
+    const repeatContrasena = document.getElementById('nueva-repeat-contrasena').value;
     const esMecanico = document.getElementById('es-mecanico').checked;
     const direccionMecanico = esMecanico ? document.getElementById('direccion-mecanico').value : '';
     const especialidadMecanico = esMecanico ? document.getElementById('especialidad-mecanico').value : '';
 
-    const nuevoUsuario = { correo, contrasena, esMecanico, direccionMecanico, especialidadMecanico };
+    // Verificación de que las contraseñas coinciden
+    if (contrasena !== repeatContrasena) {
+        alert('Las contraseñas no coinciden. Por favor, intenta de nuevo.');
+        return;
+    }
+
+    // Crear el objeto nuevoUsuario con los nuevos campos
+    const nuevoUsuario = { 
+        correo, 
+        nombreUsuario,  // Agregado nombre de usuario
+        nombre,  // Agregado nombre
+        rut,  // Agregado RUT
+        contrasena, 
+        esMecanico, 
+        direccionMecanico, 
+        especialidadMecanico 
+    };
 
     let usuarios = JSON.parse(localStorage.getItem('usuarios')) || [];
 
@@ -89,6 +109,8 @@ document.getElementById('form-crear-cuenta').addEventListener('submit', function
     alert('Cuenta creada exitosamente');
     cerrarFormulario();
 });
+
+
 
 // Inicializar el mapa y autocompletado cuando la página cargue
 window.onload = function () {

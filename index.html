@@ -93,37 +93,46 @@
             </div>
         </div>
         <!-- Formulario de Crear Cuenta -->
-<div id="crear-cuenta" class="overlay">
-    <div class="popup">
-        <button class="close" onclick="cerrarFormulario()">X</button>
-        <h2>Crear Cuenta</h2>
-        <form id="form-crear-cuenta">
-            <label for="nuevo-correo">Correo</label>
-            <input type="email" id="nuevo-correo" name="nuevo-correo" required placeholder="ec-fix@gmail.com">
-            <label for="nueva-contrasena">Contraseña</label>
-            <input type="password" id="nueva-contrasena" name="nueva-contrasena" required placeholder="*********">
-            
-            <!-- Checkbox para crear cuenta como mecánico -->
-            <p> Mecanico <input type="checkbox" id="es-mecanico" name="es-mecanico"></p>
-            
-            <div id="datos-mecanico" style="display:none;">
-                <label for="direccion-mecanico">Dirección</label>
-                <input type="text" id="direccion-mecanico" name="direccion-mecanico" placeholder="Ej: Calle Principal 123">
-                <ul id="direccion-sugerencias"></ul>
-                <label for="especialidad-mecanico">Especialidad</label>
-                <input type="text" id="especialidad-mecanico" name="especialidad-mecanico" placeholder="Mantencion">
+        <div id="crear-cuenta" class="overlay">
+            <div class="popup">
+                <button class="close" onclick="cerrarFormulario()">X</button>
+                <h2>Crear Cuenta</h2>
+                <form id="form-crear-cuenta">
+                    <label for="nuevo-correo">Correo</label>
+                    <input type="text" id="nuevo-nombre" placeholder="Nombre completo" required>
+                    <input type="text" id="nuevo-nombre-usuario" placeholder="Nombre de usuario" required>
+                    <input type="text" id="nuevo-rut" placeholder="RUT" required>
+                    <input type="email" id="nuevo-correo" name="nuevo-correo" required placeholder="ec-fix@gmail.com">
+                    <label for="nueva-contrasena">Contraseña</label>
+                    <input type="password" id="nueva-contrasena" name="nueva-contrasena" required
+                        placeholder="*********">
+                    <input type="password" id="nueva-repeat-contrasena" placeholder="Repite la contraseña" required>
+
+
+                    <!-- Checkbox para crear cuenta como mecánico -->
+                    <p> Mecanico <input type="checkbox" id="es-mecanico" name="es-mecanico"></p>
+
+                    <div id="datos-mecanico" style="display:none;">
+                        <label for="direccion-mecanico">Dirección</label>
+                        <input type="text" id="direccion-mecanico" name="direccion-mecanico"
+                            placeholder="Ej: Calle Principal 123">
+                        <ul id="direccion-sugerencias"></ul>
+                        <label for="especialidad-mecanico">Especialidad</label>
+                        <input type="text" id="especialidad-mecanico" name="especialidad-mecanico"
+                            placeholder="Mantencion">
+                    </div>
+                    <button type="submit">Crear Cuenta</button>
+                </form>
             </div>
-            <button type="submit">Crear Cuenta</button>
-        </form>
-    </div>
-</div>
+        </div>
 
     </main>
     <footer> <!-- agregar redes, y menu de contacto, etc...-->
         <p>Todos los derechos reservados ©</p>
     </footer>
     <script src="/scripts.js"></script>
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDOdX-8mB6VSL-a_yTrcs8n3lrjFQmfpmQ&libraries=places"></script>
+    <script
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDOdX-8mB6VSL-a_yTrcs8n3lrjFQmfpmQ&libraries=places"></script>
 </body>
 
 </html>
