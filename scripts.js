@@ -54,7 +54,6 @@ function geocodeAddress(direccion, callback) {
         })
 }
 
-
 // Creación de cuentas
 document.getElementById('form-crear-cuenta').addEventListener('submit', function (event) {
     event.preventDefault();
