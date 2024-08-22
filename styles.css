@@ -104,10 +104,6 @@ footer {
     padding: 20px;
     background-color: #1B1B1B;
     margin-top: 20px;
-    position: fixed;
-    left: 0;
-    bottom: 0;
-    width: 100%;
 }
 
 footer p {
