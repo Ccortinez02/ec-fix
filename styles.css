@@ -52,6 +52,7 @@ header nav ul li a:hover {
     position: absolute;
     text-align: center;
     overflow: hidden;
+    z-index: 1;
 }
 
 .servicios {
@@ -104,6 +105,10 @@ footer {
     padding: 20px;
     background-color: #1B1B1B;
     margin-top: 20px;
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
 }
 
 footer p {
@@ -247,6 +252,7 @@ footer p {
     color: white;
     display: block;
     transition: 0.3s;
+    white-space: nowrap;
 }
 
 .sidebar a:hover {
@@ -313,4 +319,6 @@ body.active-sidebar {
     display: flex;
     flex-direction: column;
 }
+
+
 
