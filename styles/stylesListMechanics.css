@@ -1,0 +1,41 @@
+
+/* Oculta la lista desplegable por defecto */
+#dropdown-lista-mecanicos {
+    display: none;
+    position: absolute;
+    background-color: #1B1B1B;
+    min-width: 200px;
+    z-index: 1;
+    margin-top: 10px;
+    padding: 10px;
+    border-radius: 5px;
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.3);
+}
+
+/* Estilo para los elementos de la lista */
+#dropdown-lista-mecanicos ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    margin-left: -18px;
+}
+
+#dropdown-lista-mecanicos ul li {
+    padding: 8px 12px;
+    cursor: pointer;
+    color: #FFF;
+    text-align: left;
+    display: block;
+}
+
+#dropdown-lista-mecanicos ul li:hover {
+    background-color: #575757;
+}
+
+/* Mostrar la lista desplegable cuando se activa */
+#dropdown-lista-mecanicos.show {
+    display: flex;
+    flex-direction: column;
+}

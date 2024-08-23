@@ -1,0 +1,42 @@
+header {
+    background-color: #1B1B1B;
+    padding: 15px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header .logo h1 {
+    color: #FFF;
+    font-size: 24px;
+}
+
+header nav ul {
+    list-style: none;
+    display: flex;
+}
+
+header nav ul li {
+    margin-left: 20px;
+}
+
+header nav ul li a {
+    color: #FFF;
+    text-decoration: none;
+    font-size: 16px;
+    padding: 5px 10px;
+}
+
+header nav ul li a.active {
+    color: #E74C3C;
+}
+
+header nav ul li a:hover {
+    color: #E74C3C;
+}
+
+#btn-service {
+    padding: 5px;
+    background-color: #C0392B;
+    border-radius: 5px;
+}

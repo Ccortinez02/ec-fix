@@ -84,3 +84,15 @@
     background: #e4405f;
     color: #fff;
 }
+
+footer {
+    text-align: center;
+    padding: 20px;
+    background-color: #1B1B1B;
+    margin-top: 20px;
+}
+
+footer p {
+    font-size: 14px;
+    color: #777;
+}

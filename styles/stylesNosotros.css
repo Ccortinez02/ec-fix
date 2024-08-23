@@ -1,0 +1,18 @@
+#nosotros {
+    text-align: center;
+    padding-top: 30px;
+}
+
+#nosotros ul li {
+    padding: 20px;
+}
+
+#nosotros ul li p {
+    font-size: 16px;
+    text-align: justify;
+}
+
+#img_nosotros {
+    width: 100%;
+    height: auto;
+}
