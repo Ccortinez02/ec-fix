@@ -22,8 +22,8 @@
     position: absolute;
     z-index: 1;
     top: 50%;
-    text-align: center;
-
+    left: 50%; /* Centra el botón horizontalmente */
+    transform: translate(-50%, -50%); /* Ajusta el centro del botón */
 }
 
 #bottone1:hover {
@@ -31,8 +31,7 @@
 }
 
 #bottone1:active {
-    transform: scale(0.97);
-    box-shadow: 7px 5px 56px -10px #de2929;
+    box-shadow: 7px 5px 20px -10px #de2929;
 }
 
 #map {
