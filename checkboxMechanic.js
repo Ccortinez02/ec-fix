@@ -8,4 +8,3 @@ document.getElementById('es-mecanico').addEventListener('change', function () {
         datosMecanico.style.display = 'none';
     }
 });
-
