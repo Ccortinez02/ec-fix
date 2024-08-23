@@ -23,6 +23,5 @@ document.querySelector('#iniciar-sesion form').addEventListener('submit', functi
 // Cerrar sesión
 function cerrarSesion() {
     alert('Has cerrado sesión');
-    localStorage.removeItem('usuarios');
     window.location.href = '/index.html'; // Redirige a la página principal sin iniciar sesion
 }

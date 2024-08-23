@@ -5,7 +5,7 @@ window.onload = function () {
     initAutocomplete();
 
     // Configuración del mapa con Mapbox
-    mapboxgl.accessToken = 'pk.eyJ1IjoiY29ydGluZXowMiIsImEiOiJjbHp4Z2o0NHgwYjIzMmlxNzZybm9pdXlzIn0.9zIWFtSdssaHrZqgki9c1w';
+    mapboxgl.accessToken = 'pk.eyJ1IjoiY29ydGluZXowMiIsImEiOiJjbTA2cmlsOHMwN3d6MnFxMW50Y3k0dno3In0.e_0Q3FZzM7FvSZeMvFU-1g';
     const map = new mapboxgl.Map({
         container: 'map',
         style: 'mapbox://styles/mapbox/streets-v11',
@@ -32,7 +32,7 @@ window.onload = function () {
 
 // Función para convertir una dirección en coordenadas usando Mapbox Geocoding API
 function geocodeAddress(direccion, callback) {
-    const apiKey = 'pk.eyJ1IjoiY29ydGluZXowMiIsImEiOiJjbHp4Z2o0NHgwYjIzMmlxNzZybm9pdXlzIn0.9zIWFtSdssaHrZqgki9c1w'; // Reemplaza con tu clave de API
+    const apiKey = 'pk.eyJ1IjoiY29ydGluZXowMiIsImEiOiJjbTA2cmlsOHMwN3d6MnFxMW50Y3k0dno3In0.e_0Q3FZzM7FvSZeMvFU-1g'; // Reemplaza con tu clave de API
     const url = `https://api.mapbox.com/geocoding/v5/mapbox.places/${encodeURIComponent(direccion)}.json?access_token=${apiKey}`;
 
     fetch(url)
