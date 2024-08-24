@@ -82,3 +82,12 @@
     text-decoration: none;
     color: #C0392B;
 }
+
+#especialidad-mecanico {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border-radius: 5px;
+    border: 1px solid #CCC;
+}
+
