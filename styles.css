@@ -16,5 +16,13 @@ body {
     margin-left: 3px;
 }
 
+html, body {
+    overflow-y: hidden; /* Oculta la barra de desplazamiento vertical */
+}
+
+.content {
+    overflow-y: scroll; /* Habilita el scroll solo en este elemento */
+}
+
 
 
