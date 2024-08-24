@@ -23,8 +23,10 @@
     position: absolute;
     z-index: 1;
     top: 90%;
-    left: 50%; /* Centra el botón horizontalmente */
-    transform: translate(-50%, -50%); /* Ajusta el centro del botón */
+    left: 50%;
+    /* Centra el botón horizontalmente */
+    transform: translate(-50%, -50%);
+    /* Ajusta el centro del botón */
 }
 
 #bottone1:hover {
@@ -47,17 +49,36 @@
 
 .servicios {
     display: flex;
+    text-align: center;
+    flex-direction: row;
+    /* Por defecto, en filas */
     justify-content: center;
+    align-items: center;
     gap: 20px;
-    /* Espacio entre los elementos */
     margin-top: 20px;
+}
+
+@media (max-width: 768px) {
+    .servicios {
+        flex-direction: column;
+    }
+
+    .servicio-item {
+        max-width: 100%;
+        /* Ocupa todo el ancho disponible en pantallas pequeñas */
+    }
+
+    .servicio-boton {
+        font-size: 14px;
+        /* Reduce el tamaño de la fuente en pantallas pequeñas */
+    }
 }
 
 .servicio-item {
     position: relative;
     text-align: center;
     background-color: #2c3e50;
-    padding: 0;
+    padding: 0px;
     border-radius: 8px;
     box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
     max-width: 300px;
@@ -76,7 +97,6 @@
     left: 0;
     width: 100%;
     background-color: rgb(46, 46, 46);
-    /* Fondo semitransparente */
     color: white;
     padding: 10px 0;
     font-size: 16px;
