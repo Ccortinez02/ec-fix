@@ -21,7 +21,7 @@
     color: white;
     position: absolute;
     z-index: 1;
-    top: 50%;
+    top: 90%;
     left: 50%; /* Centra el botón horizontalmente */
     transform: translate(-50%, -50%); /* Ajusta el centro del botón */
 }
