@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -13,9 +14,10 @@
     <link rel="stylesheet" href="/styles/stylesServicio.css">
     <link rel="stylesheet" href="/styles/stylesSidebar.css">
     <script src="https://kit.fontawesome.com/192ba4ed31.js" crossorigin="anonymous"></script>
-    <link href='https://api.mapbox.com/mapbox-gl-js/v2.13.0/mapbox-gl.css' rel='stylesheet'/>
+    <link href='https://api.mapbox.com/mapbox-gl-js/v2.13.0/mapbox-gl.css' rel='stylesheet' />
     <script src='https://api.mapbox.com/mapbox-gl-js/v2.13.0/mapbox-gl.js'></script>
 </head>
+
 <body>
     <header>
         <div class="logo">
@@ -35,7 +37,7 @@
                     <button id="bottone1"><strong>Solicitar Servicio</strong></button>
                 </div>
             </div>
-                
+
             <div class="servicios">
                 <div class="servicio-item">
                     <img src="/img/img_deteccion.png" alt="Mantenimiento">
@@ -51,27 +53,35 @@
                 </div>
             </div>
         </section>
-        
+
         <section id="nosotros">
         </section>
 
+        <!-- Formulario de Contacto -->
         <div id="contacto" class="overlay">
-            <div class="popup">
+            <div class="popup" id="contact-form">
                 <button class="close" onclick="cerrarFormulario()">X</button>
                 <h2>Contáctanos</h2>
                 <form>
-                    <p>Nuestro correo de ayuda es: <strong>ec-fix@ayuda.cl</strong></p>
-                    <p>Llámanos a estos números:</p>
-                    <ul>
-                        <p>+569-1234 5678</p>
-                        <p>+569-1234 5678</p>
-                        <p>+569-1234 5678</p>
-                    </ul> <br>
-                    <label for="correo-contacto">Déjanos tu contacto aquí</label>
-                    <input type="email" id="correo-contacto" name="correo-contacto" required placeholder="ec-fix@gmail.com">
-                    <label for="mensaje">Explícanos tu problema aquí</label>
-                    <textarea id="mensaje" name="mensaje" required></textarea>
-                    <button type="submit">Enviar</button>
+                    <div class="help-container">
+                        <div id="callhelp">
+                            <p>Nuestro correo de ayuda es: <strong>ec-fix@ayuda.cl</strong></p>
+                            <p>Llámanos a estos números:</p>
+                            <ul>
+                                <p>+569-1234 5678</p>
+                                <p>+569-1234 5678</p>
+                                <p>+569-1234 5678</p>
+                            </ul>
+                        </div>
+                        <div id="mailhelp">
+                            <label for="correo-contacto">Déjanos tu contacto aquí</label>
+                            <input type="email" id="correo-contacto" name="correo-contacto" required
+                                placeholder="ec-fix@gmail.com">
+                            <label for="mensaje">Explícanos tu problema aquí</label>
+                            <textarea id="mensaje" name="mensaje" required></textarea>
+                            <button type="submit">Enviar</button>
+                        </div>
+                    </div>
                 </form>
             </div>
         </div>
@@ -133,6 +143,8 @@
     <script src="/scripts/sidebar.js"></script>
     <script src="/scripts/session.js"></script>
     <script src="/scripts/scrollDetect.js"></script>
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDOdX-8mB6VSL-a_yTrcs8n3lrjFQmfpmQ&libraries=places"></script>
+    <script
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDOdX-8mB6VSL-a_yTrcs8n3lrjFQmfpmQ&libraries=places"></script>
 </body>
+
 </html>

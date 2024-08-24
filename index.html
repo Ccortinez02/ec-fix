@@ -36,9 +36,11 @@
     </header>
     <main>
         <section id="servicio">
-                <div class="mapa" id="map"><div id="button-service">
+            <div class="mapa" id="map">
+                <div id="button-service">
                     <button id="bottone1"><strong>Solicitar Servicio</strong></button>
-                </div></div>
+                </div>
+            </div>
             <div class="servicios">
                 <div class="servicio-item">
                     <img src="/img/img_mantenimiento.png" alt="Mantenimiento">
@@ -80,19 +82,23 @@
                 <button class="close" onclick="cerrarFormulario()">X</button>
                 <h2>Contáctanos</h2>
                 <form>
-                    <p>Nuestro correo de ayuda es: <strong>ec-fix@ayuda.cl</strong></p>
-                    <p>Llámanos a estos números:</p>
-                    <ul>
-                        <p>+569-1234 5678</p>
-                        <p>+569-1234 5678</p>
-                        <p>+569-1234 5678</p>
-                    </ul> <br>
-                    <label for="correo-contacto">Déjanos tu contacto aquí</label>
-                    <input type="email" id="correo-contacto" name="correo-contacto" required
-                        placeholder="ec-fix@gmail.com">
-                    <label for="mensaje">Explícanos tu problema aquí</label>
-                    <textarea id="mensaje" name="mensaje" required></textarea>
-                    <button type="submit">Enviar</button>
+                    <div id="callhelp">
+                        <p>Nuestro correo de ayuda es: <strong>ec-fix@ayuda.cl</strong></p>
+                        <p>Llámanos a estos números:</p>
+                        <ul>
+                            <p>+569-1234 5678</p>
+                            <p>+569-1234 5678</p>
+                            <p>+569-1234 5678</p>
+                        </ul>
+                    </div>
+                    <div id="mailhelp">
+                        <label for="correo-contacto">Déjanos tu contacto aquí</label>
+                        <input type="email" id="correo-contacto" name="correo-contacto" required
+                            placeholder="ec-fix@gmail.com">
+                        <label for="mensaje">Explícanos tu problema aquí</label>
+                        <textarea id="mensaje" name="mensaje" required></textarea>
+                        <button type="submit">Enviar</button>
+                    </div>
                 </form>
             </div>
         </div>
@@ -127,7 +133,7 @@
                             <option value="servicioExpress">Servicio Express </option>
                             <option value="DeteccionDeProblemas">Deteccion De Problemas</option>
                             <option value="Modificaciones">Modificaciones</option>
-                        <select>
+                            <select>
                     </div>
                     <button type="submit">Crear Cuenta</button>
                 </form>
