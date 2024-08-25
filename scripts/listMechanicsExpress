@@ -1,23 +1,22 @@
-// lista de mecanicos
 document.addEventListener("DOMContentLoaded", function () {
     const btnService = document.getElementById("btn-service");
     const dropdownListaMecanicos = document.getElementById("dropdown-lista-mecanicos");
 
-    // Función para obtener los mecánicos registrados desde localStorage
-    function obtenerMecanicosRegistrados() {
+    // Función para obtener los mecánicos registrados desde localStorage y filtrar por servicioExpress
+    function obtenerMecanicosServicioExpress() {
         const usuarios = JSON.parse(localStorage.getItem('usuarios')) || [];
-        return usuarios.filter(usuario => usuario.esMecanico);
+        return usuarios.filter(usuario => usuario.esMecanico && usuario.especialidadMecanico === 'servicioExpress');
     }
 
     // Función para mostrar la lista de mecánicos
     function mostrarListaMecanicos() {
-        const mecanicos = obtenerMecanicosRegistrados();
+        const mecanicos = obtenerMecanicosServicioExpress();
         const mecanicosUl = document.getElementById("mecanicos");
         mecanicosUl.innerHTML = ''; // Limpiar la lista existente
 
         if (mecanicos.length === 0) {
             const li = document.createElement("li");
-            li.textContent = "No hay mecánicos registrados.";
+            li.textContent = "No hay mecánicos registrados con especialidad en servicioExpress.";
             mecanicosUl.appendChild(li);
         } else {
             mecanicos.forEach(mecanico => {
