@@ -45,7 +45,7 @@
                 <h1>Nuestros Servicios</h1>
             </section>
             <div class="servicios">
-                
+
                 <div class="servicio-item">
                     <img src="/img/img_mantenimiento.png" alt="Mantenimiento">
                     <button class="servicio-boton">Mantenimiento</button>
@@ -143,7 +143,21 @@
                 </form>
             </div>
         </div>
-
+        <!-- Formulario de Contacto -->
+        <div id="resetPassword" class="overlay">
+            <div class="popup">
+                <button class="close" onclick="cerrarFormulario()">X</button>
+                <h2>Recuperar Contraseña</h2>
+                <form>
+                    <div id="mail2FA">
+                        <label for="correo-contacto">Escribe tu direccion email</label>
+                        <input type="email" id="correo-contacto" name="correo-contacto" required
+                            placeholder="ec-fix@gmail.com">
+                        <button type="submit">Enviar</button>
+                    </div>
+                </form>
+            </div>
+        </div>
     </main>
     <footer> <!-- agregar redes, y menu de contacto, etc...-->
         <ul class="wrapper">
