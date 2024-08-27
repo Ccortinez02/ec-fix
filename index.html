@@ -76,7 +76,7 @@
                     <button type="submit">Ingresar</button> <br> <br>
                     <a href="#" onclick="mostrarFormulario('crear-cuenta')" id="registro_link">Crear Cuenta</a><br>
                     <br>
-                    <a href="#" id="recuperar_password_link">¿Olvidaste tu contraseña?</a>
+                    <a href="#" id="recuperar_password_link" onclick="mostrarFormulario('resetPassword')">¿Olvidaste tu contraseña?</a>
                 </form>
             </div>
         </div>
@@ -150,9 +150,10 @@
                 <h2>Recuperar Contraseña</h2>
                 <form>
                     <div id="mail2FA">
-                        <label for="correo-contacto">Escribe tu direccion email</label>
+                        <label for="correo-contacto">Escribe tu direccion email:</label>
                         <input type="email" id="correo-contacto" name="correo-contacto" required
                             placeholder="ec-fix@gmail.com">
+                            <p>Te enviaremos un correo a tu email en donde podras cambiar tu password.</p> <br>
                         <button type="submit">Enviar</button>
                     </div>
                 </form>
