@@ -44,6 +44,6 @@ body.active-sidebar {
     overflow: hidden;
 }
 
-.sidebar i{
+.sidebar #fotoPerfil{
     font-size: 200px;
 }
