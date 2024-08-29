@@ -26,7 +26,7 @@
         <nav>
             <ul>
                 <li><a href="#" id="btn-service">SERVICIO EXPRESS</a></li>
-                <li><a href="#" onclick="toggleSidebar()">MI PERFIL <i class="fa-solid fa-circle-user"></i></a></li>
+                <li><a href="#" onclick="toggleSidebar()"><i class="fa-solid fa-bars"></i></i></a></li>
             </ul>
         </nav>
     </header>
@@ -121,10 +121,12 @@
 
     <div id="sidebar" class="sidebar">
         <a href="#" class="closebtn" onclick="toggleSidebar()">&times;</a>
-        <a href="#" onclick="cerrarSesion()">Cerrar Sesión</a>
-        <a href="#" onclick="mostrarFormulario('contacto')">Ayuda</a>
+        <i class="fa-solid fa-circle-user"></i> <br> <br>
+        <a href="#" on>Modificar Perfil</a>
         <a href="#">Solicitar Servicio</a>
         <a href="#">Chats</a>
+        <a href="#" onclick="mostrarFormulario('contacto')">Ayuda</a>
+        <a href="#" onclick="cerrarSesion()">Cerrar Sesión</a>
         <div class="sidebar-footer">
             <a href="#" onclick="mostrarFormulario('terminos-condiciones')">Términos y Condiciones</a>
         </div>

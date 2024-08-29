@@ -43,3 +43,7 @@
 body.active-sidebar {
     overflow: hidden;
 }
+
+.sidebar i{
+    font-size: 200px;
+}
