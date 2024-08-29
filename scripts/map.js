@@ -1,4 +1,3 @@
-// Inicializar el mapa y autocompletado cuando la página cargue
 window.onload = function () {
     // Inicializar autocompletado de direcciones
     initAutocomplete();
@@ -11,6 +10,34 @@ window.onload = function () {
         center: [-70.6693, -33.4489], // Coordenadas de Santiago
         zoom: 12
     });
+
+    // Solicitar permiso para la ubicación del usuario
+    if (navigator.geolocation) {
+        navigator.geolocation.getCurrentPosition(
+            // Función si el usuario concede el permiso
+            function (position) {
+                const userCoordinates = [position.coords.longitude, position.coords.latitude];
+
+                // Enfocar el mapa en la ubicación del usuario
+                map.flyTo({
+                    center: userCoordinates,
+                    zoom: 14 // Ajusta el nivel de zoom según lo desees
+                });
+
+                // Agregar un marcador en la ubicación del usuario
+                new mapboxgl.Marker({ color: 'blue' })
+                    .setLngLat(userCoordinates)
+                    .addTo(map);
+            },
+            // Función si el usuario rechaza el permiso o ocurre un error
+            function (error) {
+                console.error("Error al obtener la ubicación: ", error);
+                alert("No se pudo obtener su ubicación. El mapa se centrará en Santiago.");
+            }
+        );
+    } else {
+        alert("La geolocalización no es soportada por este navegador.");
+    }
 
     // Cargar todos los mecánicos y mostrar sus marcadores en el mapa
     const usuarios = JSON.parse(localStorage.getItem('usuarios')) || [];
@@ -32,7 +59,7 @@ window.onload = function () {
         map.flyTo({
             center: [longitud, latitud],
             zoom: 14, // Puedes ajustar el nivel de zoom
-            essential: true // Este parámetro hace que el movimiento sea "esencial" para el usuario
+            essential: true
         });
     };
 };
