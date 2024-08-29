@@ -1,4 +1,3 @@
-
 // Inicializar el mapa y autocompletado cuando la página cargue
 window.onload = function () {
     // Inicializar autocompletado de direcciones
@@ -27,22 +26,13 @@ window.onload = function () {
             .setLngLat([longitud, latitud])
             .addTo(map);
     }
+
+    // Función para enfocar el mapa en las coordenadas del mecánico seleccionado
+    window.enfocarMapa = function(longitud, latitud) {
+        map.flyTo({
+            center: [longitud, latitud],
+            zoom: 14, // Puedes ajustar el nivel de zoom
+            essential: true // Este parámetro hace que el movimiento sea "esencial" para el usuario
+        });
+    };
 };
-
-
-// Función para convertir una dirección en coordenadas usando Mapbox Geocoding API
-function geocodeAddress(direccion, callback) {
-    const apiKey = 'pk.eyJ1IjoiY29ydGluZXowMiIsImEiOiJjbTA2cmlsOHMwN3d6MnFxMW50Y3k0dno3In0.e_0Q3FZzM7FvSZeMvFU-1g'; // Reemplaza con tu clave de API
-    const url = `https://api.mapbox.com/geocoding/v5/mapbox.places/${encodeURIComponent(direccion)}.json?access_token=${apiKey}`;
-
-    fetch(url)
-        .then(response => response.json())
-        .then(data => {
-            if (data.features && data.features.length > 0) {
-                const location = data.features[0].geometry.coordinates;
-                callback(location[0], location[1]);
-            } else {
-                alert('No se encontró la dirección.');
-            }
-        })
-}
