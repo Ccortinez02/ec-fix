@@ -122,7 +122,7 @@
     <div id="sidebar" class="sidebar">
         <a href="#" class="closebtn" onclick="toggleSidebar()">&times;</a>
         <i class="fa-solid fa-circle-user" id="fotoPerfil"></i> <br> <br>
-        <a href="#" on>Modificar Perfil</a>
+        <a href="#" onclick="mostrarFormulario('modificar-perfil')">Modificar Perfil</a>
         <a href="#">Solicitar Servicio</a>
         <a href="#">Chats</a>
         <a href="#" onclick="mostrarFormulario('contacto')">Ayuda</a>
@@ -131,6 +131,41 @@
             <a href="#" onclick="mostrarFormulario('terminos-condiciones')">Términos y Condiciones</a>
         </div>
     </div>
+
+    <div id="modificar-perfil" class="overlay">
+        <div class="popup" id="profile-form">
+            <button class="close" onclick="cerrarFormulario()">X</button>
+            <h2>Modificar Perfil</h2>
+            <form>
+                <label for="nombre">Nombre</label>
+                <input type="text" id="nombre" name="nombre" required placeholder="Nombre">
+    
+                <label for="apellido">Apellido</label>
+                <input type="text" id="apellido" name="apellido" required placeholder="Apellido">
+    
+                <label for="direccion">Dirección</label>
+                <input type="text" id="direccion" name="direccion" required placeholder="Dirección">
+    
+                <label for="rut">RUT</label>
+                <input type="text" id="rut" name="rut" required placeholder="12345678-9">
+    
+                <label for="telefono">Teléfono</label>
+                <input type="tel" id="telefono" name="telefono" required placeholder="+56912345678">
+    
+                <label for="correo">Correo Electrónico</label>
+                <input type="email" id="correo" name="correo" required placeholder="ejemplo@correo.com">
+    
+                <label for="usuario">Usuario</label>
+                <input type="text" id="usuario" name="usuario" required placeholder="Usuario">
+    
+                <label for="fecha-nacimiento">Fecha de Nacimiento</label>
+                <input type="date" id="fecha-nacimiento" name="fecha-nacimiento" required>
+    
+                <button type="submit">Guardar Cambios</button>
+            </form>
+        </div>
+    </div>
+    
 
     <!-- Lista de mecánicos (dropdown) -->
     <div id="dropdown-lista-mecanicos" class="dropdown-content">
