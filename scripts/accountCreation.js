@@ -4,8 +4,8 @@ document.getElementById('form-crear-cuenta').addEventListener('submit', function
 
     const correo = document.getElementById('nuevo-correo').value;
     const nombreUsuario = document.getElementById('nuevo-nombre-usuario').value;
-    const nombre = document.getElementById('nuevo-nombre').value;  // Nuevo campo de nombre
-    const rut = document.getElementById('nuevo-rut').value;  // Nuevo campo de RUT
+    const nombre = document.getElementById('nuevo-nombre').value;  
+    const rut = document.getElementById('nuevo-rut').value;  
     const contrasena = document.getElementById('nueva-contrasena').value;
     const repeatContrasena = document.getElementById('nueva-repeat-contrasena').value;
     const esMecanico = document.getElementById('es-mecanico').checked;
@@ -21,9 +21,9 @@ document.getElementById('form-crear-cuenta').addEventListener('submit', function
     // Crear el objeto nuevoUsuario con los nuevos campos
     const nuevoUsuario = { 
         correo, 
-        nombreUsuario,  // Agregado nombre de usuario
-        nombre,  // Agregado nombre
-        rut,  // Agregado RUT
+        nombreUsuario,  
+        nombre,  
+        rut,  
         contrasena, 
         esMecanico, 
         direccionMecanico, 
