@@ -11,6 +11,12 @@ window.onload = function () {
         zoom: 12
     });
 
+    // Deshabilitar el zoom con el scroll del mouse
+    map.scrollZoom.disable();
+
+    // Agregar controles de navegación (zoom y rotación)
+    map.addControl(new mapboxgl.NavigationControl(), 'top-right');
+
     // Solicitar permiso para la ubicación del usuario
     if (navigator.geolocation) {
         navigator.geolocation.getCurrentPosition(
