@@ -26,6 +26,23 @@
         <nav>
             <ul>
                 <li><a href="#" id="btn-service">SERVICIO EXPRESS</a></li>
+                <li>
+                    <div class="container">
+                        <input checked="" class="checkbox" type="checkbox">
+                        <div class="mainbox">
+                            <div class="iconContainer">
+                                <svg viewBox="0 0 512 512" height="1em" xmlns="http://www.w3.org/2000/svg"
+                                    class="search_icon">
+                                    <path
+                                        d="M416 208c0 45.9-14.9 88.3-40 122.7L502.6 457.4c12.5 12.5 12.5 32.8 0 45.3s-32.8 12.5-45.3 0L330.7 376c-34.4 25.2-76.8 40-122.7 40C93.1 416 0 322.9 0 208S93.1 0 208 0S416 93.1 416 208zM208 352a144 144 0 1 0 0-288 144 144 0 1 0 0 288z">
+                                    </path>
+                                </svg>
+                            </div>
+                            <input class="search_input" placeholder="search" type="text">
+                        </div>
+                    </div>
+                </li>
+                <li><a href="#" id="Chats">CHATS</a></li>
                 <li><a href="#" onclick="toggleSidebar()"><i class="fa-solid fa-bars"></i></i></a></li>
             </ul>
         </nav>
@@ -139,33 +156,33 @@
             <form>
                 <label for="nombre">Nombre</label>
                 <input type="text" id="nombre" name="nombre" required placeholder="Nombre">
-    
+
                 <label for="apellido">Apellido</label>
                 <input type="text" id="apellido" name="apellido" required placeholder="Apellido">
-    
+
                 <label for="direccion">Dirección</label>
                 <input type="text" id="direccion" name="direccion" required placeholder="Dirección">
-    
+
                 <label for="rut">RUT</label>
                 <input type="text" id="rut" name="rut" required placeholder="12345678-9">
-    
+
                 <label for="telefono">Teléfono</label>
                 <input type="tel" id="telefono" name="telefono" required placeholder="+56912345678">
-    
+
                 <label for="correo">Correo Electrónico</label>
                 <input type="email" id="correo" name="correo" required placeholder="ejemplo@correo.com">
-    
+
                 <label for="usuario">Usuario</label>
                 <input type="text" id="usuario" name="usuario" required placeholder="Usuario">
-    
+
                 <label for="fecha-nacimiento">Fecha de Nacimiento</label>
                 <input type="date" id="fecha-nacimiento" name="fecha-nacimiento" required>
-    
+
                 <button type="submit">Guardar Cambios</button>
             </form>
         </div>
     </div>
-    
+
 
     <!-- Lista de mecánicos (dropdown) -->
     <div id="dropdown-lista-mecanicos" class="dropdown-content">
