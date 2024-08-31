@@ -63,7 +63,7 @@
         grid-template-columns: repeat(2, 1fr); /* Cambia a 2 columnas */
         grid-gap: 15px; /* Ajusta el espacio entre las cards */
         justify-content: center; /* Centra el grid horizontalmente */
-    max-width: 1200px; /* Establece un ancho máximo para el contenedor */
+        max-width: 1200px; /* Establece un ancho máximo para el contenedor */
         margin-left: auto; /* Centra el contenedor horizontalmente */
         margin-right: auto; /* Centra el contenedor horizontalmente */
     }
@@ -81,8 +81,9 @@
     .servicios {
         grid-template-columns: 1fr; /* Cambia a 1 columna en pantallas aún más pequeñas */
         grid-gap: 10px; /* Ajusta el espacio entre las cards */
-        margin-left: auto; /* Centra el contenedor horizontalmente */
-        margin-right: auto; /* Centra el contenedor horizontalmente */
+        margin-left: 25%; /* Centra el contenedor horizontalmente */
+        margin-right: 25%; /* Centra el contenedor horizontalmente */
+        align-items: center;
     }
 
     .servicio-item {
