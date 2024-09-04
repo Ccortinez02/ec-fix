@@ -50,7 +50,6 @@
 .servicios {
     display: grid;
     grid-template-columns: repeat(3, 1fr); /* Tres columnas de igual ancho */
-    margin-top: 20px;
     justify-content: center; /* Centra el grid horizontalmente */
     max-width: 1200px; /* Establece un ancho máximo para el contenedor */
     margin-left: auto; /* Centra el contenedor horizontalmente */
