@@ -22,7 +22,7 @@ document.addEventListener("DOMContentLoaded", function () {
             mecanicos.forEach(mecanico => {
                 const li = document.createElement("li");
                 li.textContent = `${mecanico.nombre} - ${mecanico.direccionMecanico} - ${mecanico.especialidadMecanico}`;
-                
+
                 // Añadir evento para enfocar el mapa en la dirección del mecánico al hacer clic
                 li.addEventListener("click", function () {
                     enfocarMapa(mecanico.coordenadas.lng, mecanico.coordenadas.lat);

@@ -61,7 +61,7 @@ window.onload = function () {
     }
 
     // Función para enfocar el mapa en las coordenadas del mecánico seleccionado
-    window.enfocarMapa = function(longitud, latitud) {
+    window.enfocarMapa = function (longitud, latitud) {
         map.flyTo({
             center: [longitud, latitud],
             zoom: 14, // Puedes ajustar el nivel de zoom
