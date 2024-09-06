@@ -11,18 +11,18 @@ body {
     font-size: 16px;
 }
 
-.fa-solid{
+.fa-solid {
     font-size: 20px;
     margin-left: 3px;
 }
 
-html, body {
-    overflow-y: hidden; /* Oculta la barra de desplazamiento vertical */
+html,
+body {
+    overflow-y: hidden;
+    /* Oculta la barra de desplazamiento vertical */
 }
 
 .content {
-    overflow-y: scroll; /* Habilita el scroll solo en este elemento */
+    overflow-y: scroll;
+    /* Habilita el scroll solo en este elemento */
 }
-
-
-
