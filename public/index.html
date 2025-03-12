@@ -217,6 +217,25 @@
     <script src="/scripts/listMechanicsExpress.js"></script>
     <script
         src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDOdX-8mB6VSL-a_yTrcs8n3lrjFQmfpmQ&libraries=places"></script>
+    <script type="module">
+        // Import the functions you need from the SDKs you need
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/11.1.0/firebase-app.js";
+        // TODO: Add SDKs for Firebase products that you want to use
+        // https://firebase.google.com/docs/web/setup#available-libraries
+
+        // Your web app's Firebase configuration
+        const firebaseConfig = {
+            apiKey: "AIzaSyD-zNyMsz4t-LEUGDahDe0jUgzOAzpYgCg",
+            authDomain: "ec-fix.firebaseapp.com",
+            projectId: "ec-fix",
+            storageBucket: "ec-fix.firebasestorage.app",
+            messagingSenderId: "569626157493",
+            appId: "1:569626157493:web:7025e12d7a595d1c45b9fc"
+        };
+
+        // Initialize Firebase
+        const app = initializeApp(firebaseConfig);
+    </script>
 </body>
 
 </html>
